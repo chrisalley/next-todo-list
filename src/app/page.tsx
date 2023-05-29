@@ -7,7 +7,7 @@ function getTodos() {
 }
 
 async function toggleTodo(id: string, complete: boolean) {
-  "use server"
+  "use server";
 
   await prisma.todo.update({ where: { id }, data: { complete } });
 }
@@ -20,19 +20,19 @@ export default async function Home() {
 
   return (
     <>
-      <header className="flex justify-between items-center mb-4">
+      <header className="mb-4 flex items-center justify-between">
         <h1 className="text-2xl">Todos</h1>
         <Link
           className="
+            rounded
             border
             border-slate-300
-            text-slate-300
             px-2
             py-1
-            rounded
-            hover:bg-slate-700
-            focus-within:bg-slate-700
+            text-slate-300
             outline-none
+            focus-within:bg-slate-700
+            hover:bg-slate-700
           "
           href="/new"
         >
